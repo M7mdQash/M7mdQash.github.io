@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+    <title>Mohammad's CV</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+    
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .section {
+            width: 100%;
+            height: 100vh;
+
+            scroll-snap-align: start;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            padding: 20px;
+            overflow-y: scroll;
+            scroll-snap-align: start;
+        }
+        .container {
+            background: linear-gradient(to right,#6b00b3,#ea72a0);
+            padding-bottom: 45px; /* Adjusted padding for better responsiveness */
+            display: flex;
+            flex-direction: column; /* Changed to column layout */
+            align-items: center;
+            position: relative;
+            margin: 0; /* Remove default body margin */
+
+        }
+
+        #listContainer {
+            margin-top: 20px; /* Adjusted margin to provide space */
+            text-align: left;
+            display: flex;
+        }
+
+        #profile-info {
+            margin-top: 20px; /* Adjusted margin to provide space */
+            display: flex;
+            align-items: center;
+        }
+
+        #profile-text {
+            margin-top: 20px; /* Adjusted margin to provide space */
+            text-align: center;
+            color: rgb(255, 255, 255);
+            font-family: 'Bradley Hand', sans-serif;
+        }
+
+        #profile-image {
+            border-radius: 80%;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            display: flex;
+        }
+
+        li a {
+            display: flex;
+            padding: 10px 50px; /* Adjusted padding for better responsiveness */
+            text-decoration: none;
+            color: rgb(222, 226, 227);
+            font-family: 'Bradley Hand', Cursive;
+            cursor: pointer; /* Added cursor pointer for better usability */
+        }
+
+        li a:hover {
+            opacity: 0.7;
+        }
+
+        a{
+            text-decoration: none;
+            color: rgb(143, 27, 232);
+        }
+
+        a:hover{
+            opacity: 0.6;
+        }
+
+        #name {
+            text-align: center;
+            color: white;
+            font-family: 'Bradley Hand', sans-serif;
+            z-index: 9;
+        }
+
+        #bg-image-div {
+            width: 100%; /* Set width to 100% for responsiveness */
+            max-width: 100%; /* Added max-width to limit size */
+            height: 600px;
+            position: relative; /* Changed to relative positioning */
+            margin-top: 20px; /* Adjusted margin to provide space */
+            overflow: hidden; /* Hide overflowing content */
+        }
+
+        #bg-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.3s ease;
+        }
+
+        #bg-image:hover {
+            opacity: 0.8;
+        }
+
+        #about {
+            background-color: rgb(234, 237, 239);
+            padding: 20px; 
+            text-align: left;
+        }
+
+        #about-text {
+            margin-top: 50px;
+            margin-left: 100px;
+            font-family: "Impact", "Lucida Grande", sans-serif;
+            font-size: 50px;
+            letter-spacing: 1.8px;
+            word-spacing: 2.8px;
+            color: #1d1a1a;
+            font-weight: normal;
+            text-decoration: none;
+            font-style: italic;
+            font-variant: normal;
+            text-transform: none;
+        }
+
+        #about-description {
+            margin-left: 60px;
+            padding: 20px;
+            text-align: center;
+            font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+            font-size: 20px;
+            letter-spacing: 1.8px;
+            word-spacing: 2.8px;
+            color: #000000;
+            font-weight: normal;
+            text-decoration: none;
+            font-style: italic;
+            font-variant: normal;
+            text-transform: none;
+        }
+
+        p{
+            font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+        }
+        
+        #EducationExperienceContainer {
+            margin-top: 1px;
+            width: 80%;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .education, .experience {
+            flex: 1;
+            padding: 50px; /* Adjusted padding to 50px */
+            font-size: 20px; /* Set font size to 20px or adjust as needed */
+        }
+
+        .education {
+            margin-right: 10%;
+            margin-left: 25%;
+        }
+
+        .experience {
+            margin-left: 10%;
+        }
+        
+        .education h2, .experience h2, .section h2 {
+            font-family: "Impact", "Lucida Grande", sans-serif;
+            font-size: 40px;
+
+        }   
+
+        #skills-languages {
+            background-color: rgb(255, 255, 255);
+            padding: 20px;
+            text-align: center; 
+        }
+
+        .meter {
+            width: 70%;
+            margin: 20px auto;
+            display: flex;
+            align-items: center;
+        }
+
+        .skill-name {
+            flex: 1;
+            font-weight: bold;
+        }
+
+        .meter-bar {
+            flex: 3;
+            background-color: #cbeae8;
+            height: 20px;
+            border-radius: 10px;
+            margin-right: 10px;
+            overflow: hidden;
+        }
+
+        .meter-progress {
+            height: 100%;
+            border-radius: 8px;
+            background: linear-gradient(to right, #ea72a0, #6b00b3); /* Colorful gradient */
+        }
+
+        .line {
+            margin-left: 21%;
+            width: 8%;
+            height: 2px;
+            background-color: #b4c1d8;
+        }
+
+        #contact {
+            background: -moz-linear-gradient(to bottom,#9bcae0,#cbeae8);
+            padding: 20px;
+            text-align: center;
+        }
+
+        #contact-message {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .social-icon {
+            margin: 25px;
+            width: 5px; /* Adjusted width to 20px */
+            height: 5px; /* Adjusted height to 20px */
+        }
+
+        .contact-info {
+            font-size: 18px;
+        }
+
+        #last-div {
+            background: -moz-linear-gradient(to bottom,#cbeae8,#0687c3); /* Set light blue background color */
+            text-align: center;
+            padding: 10px;
+        }
+
+        #last-div-message {
+            font-size: 14px;
+            color: white; /* Set text color to white */
+        }
+
+    </style>
+</head>
+
+<body>
+    
+    <div class="container">
+        <div id="listContainer">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#EducationExperienceContainer">Education & Experience</a></li>
+                <li><a href="#skills-languages">Skills & Languages</a></li>
+                <li><a href="#projects-section">Projects</a></li>
+            </ul>
+        </div>
+        <div id="profile-info">
+            <img id="profile-image" src="pfpPlace.jpg" alt="Profile Image">
+        </div>
+        <div id="profile-text">
+            <p>Mohammad Kashkari.</p>
+            <p>CS Student</p>
+            <p>In Makkah, <a href="https://uqu.edu.sa/"><b>UQU</b></a></p>
+        </div>
+        
+    </div>
+
+
+
+    <div id="about">
+        <p id="about-text">
+            About
+        </p>
+            <p id="about-description">
+                I am Mohammad Kashkari, a dedicated and passionate Computer Science student currently pursuing my 
+                education at Umm alqura University. Throughout my academic journey, I have not only immersed myself in 
+                the theoretical aspects of computer science but have actively applied my knowledge through various hands-on projects.
+            </p>
+    </div>
+
+
+
+    <div id="EducationExperienceContainer">
+        <div class="education">
+            <h2>Education</h2>
+            <p>2022–Present<br>umm al qura – Mecca<br>Bachelor of Computer Science</p>
+    
+            
+        </div>
+        <div class="experience">
+            <h2>Experience</h2>
+    
+            <p>Jul. 2023–Aug 2023<br>Satr code academy, JavaScript101</p>
+    
+            <p>2019–2022<br> Al zaiydi highschool, Mecca, Class of 2022<br>Class Valedictorian</p>
+        </div>
+    </div>
+    
+
+
+   <div id="skills-languages">
+        <h2>Skills & Languages</h2>
+
+        <div class="meter">
+            <div class="skill-name">Java</div>
+            <div class="meter-bar">
+                <div class="meter-progress" style="width: 90%;"></div>
+            </div>
+        </div>
+
+        <div class="meter">
+            <div class="skill-name">Javascript</div>
+            <div class="meter-bar">
+                <div class="meter-progress" style="width: 30%;"></div>
+            </div>
+        </div>
+
+        <div class="meter">
+            <div class="skill-name">HTML & CSS</div>
+            <div class="meter-bar">
+                <div class="meter-progress" style="width: 80%;"></div>
+            </div>
+        </div>
+
+        <div class="meter">
+            <div class="skill-name">MySQL</div>
+            <div class="meter-bar">
+                <div class="meter-progress" style="width: 90%;"></div>
+            </div>
+        </div>
+
+
+        <div class="line"></div>
+
+
+        <div class="meter">
+            <div class="skill-name">Arabic</div>
+            <div class="meter-bar">
+                <div class="meter-progress" style="width: 100%;"></div>
+            </div>
+        </div>
+
+        <div class="meter">
+            <div class="skill-name">English</div>
+            <div class="meter-bar">
+                <div class="meter-progress" style="width: 70%;"></div>
+            </div>
+        </div>
+
+        <div class="meter">
+            <div class="skill-name">Turkish</div>
+            <div class="meter-bar">
+                <div class="meter-progress" style="width: 10%;"></div>
+            </div>
+        </div>
+    </div>
+    <div id="projects-section" class="section">
+        <section>
+            <h2>Projects</h2>
+
+            <article>
+                <h3>Java swing drawing app</h3>
+                <p>Developed a personal art programm to showcase java swing abilities.</p>
+                <p>GitHub Repository: <a href="https://github.com/M7mdQash/CG-project">Link</a> </p>
+            </article>
+
+            <article>
+                <h3>Javascript basic library</h3>
+                <p>Built a basic library program for javascript.</p>
+                <p>GitHub Repository:<a href="https://github.com/M7mdQash/javascript-101-practice">Link</a></p>
+            </article>
+        </section>
+    </div>
+
+    <div id="contact">
+        <p id="contact-message">I would love to hear from you!</p>
+
+        <div class="social-icons">
+            <a href="https://github.com/M7mdQash" target="_blank" class="social-icon"><img src="git.jpg" alt="github"></a>
+            <a href="https://www.twitter.com/" target="_blank" class="social-icon"><img src="x.png" alt="Twitter"></a>
+            <a href="https://www.linkedin.com/" target="_blank" class="social-icon"><img src="in.png" alt="LinkedIn"></a>
+        </div>
+
+        <div class="contact-info">
+            <p>Email: Mohammad@gmail.com</p>
+            <p>Phone: +966541090164</p>
+        </div>
+    </div>
+    
+    <div id="last-div">
+        <p id="last-div-message">© 2024 By Mohammad Kashkari.</p>
+    </div>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetElement = document.querySelector(this.getAttribute('href'));
+                const offset = 0; // You can adjust this offset if you have a fixed navigation bar
+
+                window.scrollTo({
+                    top: targetElement.offsetTop - offset,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        document.querySelector('a[href="#Education"]').addEventListener('click', function (e) {
+            e.preventDefault();
+
+            const educationElement = document.getElementById('Education');
+            const offset = 0;
+
+            window.scrollTo({
+                top: educationElement.offsetTop - offset,
+                behavior: 'smooth'
+            });
+        });
+
+        document.querySelector('a[href="#skills-languages"]').addEventListener('click', function (e) {
+            e.preventDefault();
+
+             const skillsLanguagesElement = document.getElementById('skills-languages');
+            const offset = 0;
+
+            window.scrollTo({
+                top: skillsLanguagesElement.offsetTop - offset,
+                behavior: 'smooth'
+            });
+        });
+        document.querySelector('a[href="#projects-section"]').addEventListener('click', function (e) {
+            e.preventDefault();
+
+             const skillsLanguagesElement = document.getElementById('skills-languages');
+            const offset = 0;
+
+            window.scrollTo({
+                top: skillsLanguagesElement.offsetTop - offset,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+    
+</body>
+</html>
