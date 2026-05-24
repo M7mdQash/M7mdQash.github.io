@@ -219,14 +219,8 @@
       width: 260px;
       height: 260px;
       border-radius: 50%;
-      background: conic-gradient(from 0deg, var(--green-bright), var(--green-dark), #052e16, var(--green-bright));
-      padding: 4px;
+      border: 4px solid var(--green-border);
       box-shadow: 0 0 60px rgba(34, 197, 94, 0.25), 0 0 120px rgba(34, 197, 94, 0.1);
-      animation: ring-spin 8s linear infinite;
-    }
-
-    @keyframes ring-spin {
-      to { filter: hue-rotate(40deg); }
     }
 
     .hero-avatar-placeholder {
@@ -239,6 +233,14 @@
       justify-content: center;
       font-size: 5rem;
       color: rgba(74, 222, 128, 0.45);
+    }
+
+    .hero-avatar-photo {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
     }
 
     /* ─── Section headings ─── */
@@ -694,7 +696,7 @@
               View My Work <i class="bi bi-arrow-down-short"></i>
             </a>
             <!-- TODO: replace href="#" below with your Google Drive CV document link -->
-            <a href="#" target="_blank" rel="noopener" class="btn-hero btn-hero-cv">
+            <a href="https://1drv.ms/b/c/34c62079c7261296/IQAne3kH1BQ0QIZrpfh6XkZ_AbTHqvLZHS3uLhxtAv5IG98?e=DDKVOG" target="_blank" rel="noopener" class="btn-hero btn-hero-cv">
               View My CV <i class="bi bi-file-earmark-text"></i>
             </a>
           </div>
@@ -702,9 +704,7 @@
 
         <div class="col-lg-5 hero-profile-wrapper" style="order:2;">
           <div class="hero-profile-ring">
-            <div class="hero-avatar-placeholder">
-              <i class="bi bi-person-fill"></i>
-            </div>
+            <img src="images/person/personal.jpg" alt="Mohammad Kashkari" class="hero-avatar-photo">
           </div>
         </div>
 
@@ -719,27 +719,59 @@
   <section id="projects" class="py-5 py-lg-6">
     <div class="container py-4">
       <p class="section-label">Portfolio</p>
-      <h2 class="section-title">Projects</h2>
+      <h2 class="section-title">Selected Projects</h2>
       <div class="section-divider"></div>
 
       <div class="row g-4">
 
         <div class="col-sm-6 col-lg-4">
           <div class="project-card glass-card">
-            <!-- Project image carousel.
-                 TODO: replace the src paths below with your own screenshots for this project.
-                 Add or remove .carousel-slide blocks to change how many images appear. -->
             <div class="project-media">
               <div class="carousel-track">
                 <div class="carousel-slide">
-                  <img src="images/stock-1.jpg" alt="Stock Market Prediction screenshot 1" loading="lazy">
+                  <img src="images/Yume/yume-1.png" alt="Yume capsule hotel booking screenshot 1" loading="lazy">
                 </div>
                 <div class="carousel-slide">
-                  <img src="images/stock-2.jpg" alt="Stock Market Prediction screenshot 2" loading="lazy">
+                  <img src="images/Yume/yume-2.png" alt="Yume capsule hotel booking screenshot 2" loading="lazy">
                 </div>
                 <div class="carousel-slide">
-                  <img src="images/stock-3.jpg" alt="Stock Market Prediction screenshot 3" loading="lazy">
+                  <img src="images/Yume/yume-3.png" alt="Yume capsule hotel booking screenshot 3" loading="lazy">
                 </div>
+              </div>
+              <button class="carousel-btn prev" type="button" aria-label="Previous image"><i class="bi bi-chevron-left"></i></button>
+              <button class="carousel-btn next" type="button" aria-label="Next image"><i class="bi bi-chevron-right"></i></button>
+              <div class="carousel-dots"></div>
+            </div>
+            <div class="project-icon"><i class="bi bi-house-heart"></i></div>
+            <div class="project-title">Yume</div>
+            <div class="project-date"><i class="bi bi-geo-alt me-1"></i>Capsule Hotel Booking Platform</div>
+            <p class="project-desc">
+              A <strong>capsule hotel booking platform</strong> designed for Saudi Arabia to serve foreign
+              short-stay visitors — streamlining discovery, reservation, and check-in for compact, affordable stays.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Saudi Arabia</span><span class="tag">Hospitality</span><span class="tag">Booking</span>
+            </div>
+            <a href="https://github.com/M7mdQash" target="_blank" class="project-link">
+              View on GitHub <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4">
+          <div class="project-card glass-card">
+            <div class="project-media">
+              <div class="carousel-track">
+                <div class="carousel-slide">
+                  <img src="images/stock-market/ss1.png" alt="Stock Market Prediction screenshot 1" loading="lazy">
+                </div>
+                <div class="carousel-slide">
+                  <img src="images/stock-market/ss2.jpg" alt="Stock Market Prediction screenshot 2" loading="lazy">
+                </div>
+                <div class="carousel-slide">
+                  <img src="images/stock-market/ss3.jpg" alt="Stock Market Prediction screenshot 3" loading="lazy">
+                </div>
+                
               </div>
               <button class="carousel-btn prev" type="button" aria-label="Previous image"><i class="bi bi-chevron-left"></i></button>
               <button class="carousel-btn next" type="button" aria-label="Next image"><i class="bi bi-chevron-right"></i></button>
